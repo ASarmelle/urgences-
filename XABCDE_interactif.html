@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L’XABCDE — Démarche interactive</title>
+<style>
+  :root {
+    --bg:#f5f6f8; --card:#fff; --text:#20242a; --muted:#68707a;
+    --accent:#7d1f2b; --accent2:#a42c3b; --border:#e1e4e8;
+    --action:#8b2330;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; padding:20px;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.5;
+  }
+  .container { max-width:900px; margin:auto; }
+  header {
+    background:var(--card); border-radius:16px; padding:22px;
+    margin-bottom:18px; border:1px solid var(--border);
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+  }
+  h1 { margin:0 0 6px; color:var(--accent); font-size:28px; }
+  .subtitle { margin:0; color:var(--muted); }
+  .warning {
+    margin-top:14px; padding:12px 14px; border-radius:10px;
+    background:#fff6f6; border-left:4px solid var(--action);
+    font-size:14px;
+  }
+  details {
+    background:var(--card); border:1px solid var(--border);
+    border-radius:14px; margin:12px 0; overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.04);
+  }
+  summary {
+    cursor:pointer; list-style:none; padding:17px 18px;
+    display:flex; align-items:center; gap:12px; font-weight:700;
+    font-size:18px;
+  }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:"＋"; margin-left:auto; color:var(--accent); font-size:22px; }
+  details[open] summary::after { content:"−"; }
+  .letter {
+    width:38px; height:38px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--accent); color:white; flex:none; font-size:19px;
+  }
+  .content { padding:0 18px 20px; border-top:1px solid var(--border); }
+  .question {
+    margin:16px 0 8px; font-weight:700; color:var(--accent);
+  }
+  ul { margin:7px 0 14px; padding-left:22px; }
+  li { margin:7px 0; }
+  .action {
+    background:#f9eef0; border-left:4px solid var(--action);
+    padding:11px 13px; margin:12px 0; border-radius:8px;
+  }
+  .action b { color:var(--action); }
+  .subdetails {
+    margin:10px 0; border:1px solid #e7e8eb; border-radius:10px;
+    box-shadow:none;
+  }
+  .subdetails summary { font-size:16px; padding:13px 14px; }
+  .subdetails .content { padding:0 14px 14px; }
+  .footer {
+    text-align:center; color:var(--muted); font-size:13px; margin:20px 0 4px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>L’XABCDE — démarche interactive</h1>
+  <p class="subtitle">Clique sur chaque étape pour afficher les éléments d’évaluation et les actions associées.</p>
+  <div class="warning">
+    <b>Support de révision :</b> cette fiche reprend le contenu de la photo fournie. En situation réelle, appliquer les protocoles locaux et les consignes de l’équipe médicale.
+  </div>
+</header>
+
+<details>
+  <summary><span class="letter">L</span> État de conscience</summary>
+  <div class="content">
+    <div class="question">À vérifier</div>
+    <ul>
+      <li>Conscient ?</li>
+      <li>« A l’air vivant ? »</li>
+      <li>Évaluation rapide de la situation et du risque.</li>
+    </ul>
+    <div class="action"><b>→ ACTION :</b> Protection ? → Alerte ?</div>
+  </div>
+</details>
+
+<details>
+  <summary><span class="letter">X</span> Exsanguination</summary>
+  <div class="content">
+    <div class="question">Rechercher une hémorragie massive extériorisée</div>
+    <ul>
+      <li>Membre</li>
+      <li>Abdomen</li>
+      <li>Thorax</li>
+      <li>Cervical</li>
+      <li>Orifices</li>
+    </ul>
+    <div class="action"><b>→ Protection</b> (EPI)</div>
+    <div class="action">
+      <b>→ Contrôle de l’hémorragie :</b>
+      <ul>
+        <li>Compression manuelle ?</li>
+        <li>Pansement compressif ?</li>
+        <li>Garrot ?</li>
+        <li>Pansement israélien ?</li>
+      </ul>
+    </div>
+  </div>
+</details>
+
+<details>
+  <summary><span class="letter">A</span> Airway — ouverture des voies aériennes</summary>
+  <div class="content">
+    <div class="question">Évaluer les voies aériennes</div>
+    <ul>
+      <li>Corps étranger ?</li>
+      <li>Œdème ?</li>
+      <li>Traumatisme ?</li>
+      <li>Obstruction complète ou incomplète ?</li>
+    </ul>
+
+    <div class="action"><b>→ Actions :</b></div>
+    <ul>
+      <li>Aspiration ?</li>
+      <li>Soulever le menton / subluxation mandibulaire / maintien de la tête.</li>
+    </ul>
+
+    <details class="subdetails">
+      <summary>Si OCVAS</summary>
+      <div class="content">
+        <ul>
+          <li>5 tapes dans le dos.</li>
+          <li>5 compressions abdominales (Heimlich).</li>
+          <li>À renouveler.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details>
+  <summary><span class="letter">B</span> Breathing — respiration</summary>
+  <div class="content">
+    <div class="question">Le patient respire-t-il ?</div>
+    <div class="action"><b>NON → ACTION : RCP</b></div>
+
+    <div class="question">Si le patient respire : évaluer</div>
+    <ul>
+      <li>FR (FR &lt; 10 ? / FR &gt; 20–30 ?)</li>
+      <li>Cyanose ?</li>
+      <li>Sueurs ?</li>
+      <li>Comportement du patient.</li>
+      <li>Signes de lutte ?</li>
+      <li>Tirage sus-claviculaire / intercostal.</li>
+      <li>Balancement thoraco-abdominal.</li>
+    </ul>
+
+    <div class="action">
+      <b>→ Actions indiquées sur la fiche :</b>
+      <ul>
+        <li>O₂ 15 L MHC.</li>
+        <li>Position assise.</li>
+        <li>Support ventilation BAVU (&lt; 6/min).</li>
+        <li>PLS et libération des VAS si inconscient qui respire sans détresse.</li>
+      </ul>
+    </div>
+  </div>
+</details>
+
+<details>
+  <summary><span class="letter">C</span> Circulation</summary>
+  <div class="content">
+    <div class="question">Évaluer la circulation</div>
+    <ul>
+      <li>Pouls radial perçu (TAS &gt; 80) ?</li>
+      <li>Régularité ?</li>
+      <li>Filant / bien frappé ?</li>
+      <li>FC &gt; 100 ou &lt; 50 ?</li>
+      <li>Marbrures ?</li>
+      <li>TRC ≥ 3 sec ?</li>
+      <li>Peau : pâle, moite, froide ?</li>
+      <li>Saignement ?</li>
+    </ul>
+    <div class="action"><b>→ RCP ?</b></div>
+    <div class="action">
+      <b>→ Selon la fiche :</b>
+      1 à 2 VVP calibre ≥ 20G, 250 mL de NaCl 0,9 % sur prescription — position allongée.
+    </div>
+  </div>
+</details>
+
+<details>
+  <summary><span class="letter">D</span> Disability — déficit neurologique / niveau de conscience</summary>
+  <div class="content">
+    <div class="question">Évaluer l’état neurologique</div>
+    <ul>
+      <li>Réponds aux ordres simples ?</li>
+      <li>À la douleur ?</li>
+      <li>AVPU : Awake, Verbal, Pain, Unresponsive.</li>
+      <li>Motricité / sensibilité des 4 membres ?</li>
+      <li>Pupilles symétriques ?</li>
+      <li>FAST : Face, Arm, Speech, Time.</li>
+    </ul>
+    <div class="action">
+      <b>→ HGT +++ / DEXTRO</b> → resucrage PO ou IV selon l’état de conscience.
+    </div>
+    <div class="action"><b>→ Noter l’heure du début du déficit.</b></div>
+  </div>
+</details>
+
+<details>
+  <summary><span class="letter">E</span> Exposure — exposition / visualisation</summary>
+  <div class="content">
+    <div class="question">Examen global</div>
+    <ul>
+      <li>Déshabillage du patient.</li>
+      <li>« Ai-je loupé un truc ? »</li>
+      <li>Autres évaluations / éléments d’orientation.</li>
+      <li>Dossier médical.</li>
+      <li>Constantes.</li>
+      <li>ECG.</li>
+      <li>MHTA (SAMPLER).</li>
+      <li>Douleur PQRST.</li>
+    </ul>
+  </div>
+</details>
+
+<header style="margin-top:18px;">
+  <div class="action" style="margin:0;">
+    <b>Réévaluation :</b> réévaluation systématique après chaque intervention dans l’XABCDE.
+  </div>
+</header>
+
+<p class="footer">Version interactive créée à partir de la fiche photographiée.</p>
+</div>
+</body>
+</html>
